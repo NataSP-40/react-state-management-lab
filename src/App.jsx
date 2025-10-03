@@ -143,15 +143,11 @@ const App = () => {
   return (
     <div>
       <h1>Reactville Zombie Defence</h1>
-      {/* <p>Money left: ${money}</p>
-      <p>Team size: {team.length}</p> */}
-      
-
-      {/* Show current money and team size */}
-      <div>
-        <strong>Money:</strong> ${money};
-        <strong>Team Size:</strong> {team.length}
-      </div>
+       {/* Show current money and team size */}
+      <p>
+        <span className="stat">Total Money: ${money}</span>
+        <span className="stat">Team size: {team.length}</span>
+      </p>
 
       {/* Team Stats */}
       <div style={{ marginTop: 8}}>
@@ -185,15 +181,13 @@ const App = () => {
       ) : (
         <ul>
           {team.map((member) => (
-            <li key={member.id} 
-            // style={{ marginBottom: 12, listStyle: 'none' }}
-            >
+            <li key={member.id}>
             <img src={member.img} alt={member.name} style={{ width: 80 }} />
             <h3>{member.name}</h3>
-            {/* <strong style={{ marginLeft: 8 }}>{member.name}</strong> */}
-            <span style={{ marginLeft: 12 }}>{member.price}</span>
-            <span style={{ marginLegt: 8 }}>{member.strength}</span>
-            <span style={{ marginLeft: 8 }}>{member.agility}</span>
+            <p>Price: {member.price} </p>
+            <p>Strength: {member.strength}</p>
+            <p>Agility: {member.agility}</p>
+           
             <button style={{ marginLeft: 12 }} onClick={() => handleRemoveFighter(member.id)}>Remove</button>
             </li>
           ))}
